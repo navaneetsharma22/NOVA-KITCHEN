@@ -3,6 +3,7 @@ import { CollectionsSection } from "@/components/sections/collections/Collection
 import { ProductShowcase } from "@/components/sections/showcase/ProductShowcase";
 import { MaterialLibrary } from "@/components/sections/materials/MaterialLibrary";
 import { ProjectsSection } from "@/components/sections/projects/ProjectsSection";
+import { DifferenceSection } from "@/components/sections/difference/DifferenceSection";
 
 export default function Home() {
   return (
@@ -12,6 +13,7 @@ export default function Home() {
       <ProductShowcase />
       <MaterialLibrary />
       <ProjectsSection />
+      <DifferenceSection />
       {/* Future sections will go here */}
     </div>
   );
