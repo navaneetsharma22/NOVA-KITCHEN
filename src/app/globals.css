@@ -1,0 +1,142 @@
+@import "tailwindcss";
+@import "tw-animate-css";
+@import "shadcn/tailwind.css";
+
+@custom-variant dark (&:is(.dark *));
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --font-sans: var(--font-sans);
+  --font-heading: var(--font-heading);
+  --font-mono: var(--font-geist-mono);
+  
+  --color-section: var(--section);
+  --color-surface: var(--surface);
+  
+  /* Semantic Tokens */
+  --color-heading: var(--heading);
+  --color-body: var(--body);
+  --color-success: var(--success);
+  --color-warning: var(--warning);
+  --color-error: var(--error);
+  
+  /* State Tokens */
+  --color-primary-hover: var(--primary-hover);
+  --color-primary-active: var(--primary-active);
+  --color-secondary-hover: var(--secondary-hover);
+  --color-secondary-active: var(--secondary-active);
+  --color-disabled: var(--disabled);
+  --color-disabled-foreground: var(--disabled-foreground);
+  --color-focus-ring: var(--focus-ring);
+  
+  /* shadcn/ui defaults mapped to semantic colors */
+  --color-ring: var(--focus-ring);
+  --color-input: var(--border);
+  --color-border: var(--border);
+  --color-destructive: var(--error);
+  --color-destructive-foreground: #FFFFFF;
+  --color-accent-foreground: var(--heading);
+  --color-accent: var(--section);
+  --color-muted-foreground: var(--body);
+  --color-muted: var(--section);
+  --color-secondary-foreground: #FFFFFF;
+  --color-secondary: var(--secondary);
+  --color-primary-foreground: #FFFFFF;
+  --color-primary: var(--primary);
+  --color-popover-foreground: var(--heading);
+  --color-popover: var(--surface);
+  --color-card-foreground: var(--heading);
+  --color-card: var(--surface);
+  
+  --radius-sm: calc(var(--radius) * 0.6);
+  --radius-md: calc(var(--radius) * 0.8);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) * 1.4);
+}
+
+:root {
+  /* NOVA KITCHENS Premium Color System */
+  --background: #FBF8F4; /* Warm Porcelain */
+  --foreground: #5F6368; /* Slate Gray (Body Text mapped here by default) */
+  --heading: #1F1F1F; /* Graphite */
+  --body: #5F6368; /* Slate Gray */
+  
+  --section: #EEF1F4; /* Mist Gray */
+  --surface: #FFFFFF; /* Pure White */
+  
+  --primary: #C46A3C; /* Clay Terracotta */
+  --secondary: #5B4032; /* Cocoa Brown */
+  --accent-brand: #D89A63; /* Burnished Bronze */
+  
+  --border: #DAD5CF; /* Soft Stone */
+  
+  --success: #5F8B63;
+  --warning: #D9A441;
+  --error: #C85C4A;
+  
+  /* Hover & Active States */
+  --primary-hover: #b35f34; /* Slightly darker terracotta */
+  --primary-active: #a1552d;
+  --secondary-hover: #4a3328;
+  --secondary-active: #3a281f;
+  
+  /* Disabled States */
+  --disabled: #EAE5DF;
+  --disabled-foreground: #A8A39D;
+  
+  /* Focus States */
+  --focus-ring: #C46A3C; /* Using Primary as default focus ring */
+  
+  --radius: 0.5rem;
+  
+  /* Typography */
+  --font-sans: 'Inter', sans-serif;
+  --font-heading: 'New York', serif;
+}
+
+.dark {
+  /* Future Dark Mode Support */
+  --background: #181614; 
+  --foreground: #D1CFCD; 
+  --heading: #FBF8F4;
+  --body: #A8A39D;
+  
+  --section: #22201d; 
+  --surface: #181614; 
+  
+  --primary: #D89A63; /* Bronze pops more in dark mode */
+  --secondary: #C46A3C; 
+  --accent-brand: #5B4032; 
+  
+  --border: #3A3632; 
+  
+  --success: #5F8B63;
+  --warning: #D9A441;
+  --error: #C85C4A;
+  
+  /* Hover & Active States */
+  --primary-hover: #c48a58;
+  --primary-active: #b57e4e;
+  --secondary-hover: #b35f34;
+  --secondary-active: #a1552d;
+  
+  /* Disabled States */
+  --disabled: #2A2623;
+  --disabled-foreground: #5C5854;
+  
+  /* Focus States */
+  --focus-ring: #D89A63;
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-heading text-heading font-medium tracking-tight;
+  }
+}

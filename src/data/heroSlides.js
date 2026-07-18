@@ -1,0 +1,47 @@
+export const heroSlides = [
+  {
+    id: 1,
+    eyebrow: "The Heritage Collection",
+    heading: "Luxury Walnut Kitchen",
+    description: "Experience the timeless elegance of Italian craftsmanship, featuring rich walnut textures and flawless integration.",
+    image: "/images/hero/walnut.png",
+    primaryCta: "Explore Collection",
+    secondaryCta: "Book Consultation",
+  },
+  {
+    id: 2,
+    eyebrow: "Modern Simplicity",
+    heading: "Minimal White Kitchen",
+    description: "A masterclass in modern architecture, where pristine white surfaces meet ultimate functional precision.",
+    image: "/images/hero/white.png",
+    primaryCta: "View Details",
+    secondaryCta: "Download Catalog",
+  },
+  {
+    id: 3,
+    eyebrow: "The Social Hub",
+    heading: "Kitchen Island",
+    description: "Transform your space with a monumental stone island, designed for both culinary excellence and social hosting.",
+    image: "/images/hero/island.png",
+    primaryCta: "Discover Islands",
+    secondaryCta: "Talk to Designer",
+  },
+  {
+    id: 4,
+    eyebrow: "Elegant Display",
+    heading: "Glass Display Cabinets",
+    description: "Bespoke glass cabinets with warm internal lighting, designed to showcase your finest dishware and stemware.",
+    image: "/images/hero/storage.png",
+    primaryCta: "Explore Storage",
+    secondaryCta: "Book Consultation",
+  },
+  {
+    id: 5,
+    eyebrow: "Culinary Organization",
+    heading: "Luxury Pantry",
+    description: "Intelligent storage solutions wrapped in premium wooden shelving, bringing order and beauty to your kitchen.",
+    image: "/images/hero/pantry.png",
+    primaryCta: "View Storage",
+    secondaryCta: "Download Catalog",
+  }
+];
