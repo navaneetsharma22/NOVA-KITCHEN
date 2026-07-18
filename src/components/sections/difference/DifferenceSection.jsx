@@ -122,15 +122,17 @@ export function DifferenceSection() {
           {/* Left: Large Editorial Image (45%) */}
           <div ref={imageContainerRef} className="w-full lg:w-[45%] flex-shrink-0 order-1 lg:order-none">
             <div className="sticky top-12 lg:top-32 w-full aspect-[4/5] sm:aspect-[16/9] lg:aspect-[4/5] rounded-[32px] overflow-hidden shadow-[0_30px_60px_rgba(31,31,31,0.08)] bg-white">
-              <Image
-                ref={imageRef}
-                src={activeFeature.image}
-                alt={activeFeature.title}
-                fill
-                className="object-cover"
-                sizes="(max-width: 1024px) 100vw, 45vw"
-                priority
-              />
+              <div className="relative w-full h-full">
+                <Image
+                  ref={imageRef}
+                  src={activeFeature.image}
+                  alt={activeFeature.title}
+                  fill
+                  className="object-cover"
+                  sizes="(max-width: 1024px) 100vw, 45vw"
+                  priority
+                />
+              </div>
             </div>
           </div>
 

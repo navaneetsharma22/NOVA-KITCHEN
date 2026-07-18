@@ -110,15 +110,17 @@ export function ProcessSection() {
           {/* Left: Sticky Image Container */}
           <div ref={imageContainerRef} className="w-full lg:w-1/2 flex-shrink-0 order-1 lg:order-none">
             <div className="sticky top-12 lg:top-32 w-full aspect-[4/3] sm:aspect-[16/9] lg:aspect-[4/5] rounded-[32px] overflow-hidden shadow-[0_30px_60px_rgba(31,31,31,0.12)] bg-[#FBF8F4]">
-              <Image
-                ref={imageRef}
-                src={activeStage.image}
-                alt={activeStage.stage}
-                fill
-                className="object-cover"
-                sizes="(max-width: 1024px) 100vw, 50vw"
-                priority
-              />
+              <div className="relative w-full h-full">
+                <Image
+                  ref={imageRef}
+                  src={activeStage.image}
+                  alt={activeStage.stage}
+                  fill
+                  className="object-cover"
+                  sizes="(max-width: 1024px) 100vw, 50vw"
+                  priority
+                />
+              </div>
             </div>
           </div>
 
