@@ -9,11 +9,11 @@ export const collections = [
   },
   {
     id: 2,
-    title: "Walk-in Wardrobes",
-    label: "Wardrobes",
-    description: "Curated elegance and organized living wrapped in premium materials and intelligent design.",
-    image: "/images/hero/wardrobe.png",
-    href: "/collections/wardrobes"
+    title: "Outdoor Kitchens",
+    label: "Outdoor",
+    description: "Al fresco culinary experiences built to withstand the elements without compromising on luxury.",
+    image: "/images/projects/project_open_kitchen_1784361404302.png",
+    href: "/collections/outdoor-kitchens"
   },
   {
     id: 3,
@@ -33,11 +33,11 @@ export const collections = [
   },
   {
     id: 5,
-    title: "TV & Living Units",
-    label: "Living",
-    description: "Seamless architectural integration bridging the kitchen and living spaces.",
+    title: "Bar & Wine Rooms",
+    label: "Hosting",
+    description: "Seamless architectural integration for the ultimate hosting and wine tasting experience.",
     image: "/images/collections/kitchen.png",
-    href: "/collections/tv-units"
+    href: "/collections/bar-wine"
   },
   {
     id: 6,

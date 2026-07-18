@@ -91,61 +91,61 @@ export const collectionsDetailed = [
   },
   {
     id: 2,
-    slug: "wardrobes",
-    title: "Walk-in Wardrobes",
-    label: "Walk-in Wardrobes",
-    tagline: "Curated Elegance, Organized Living",
-    overview: "Our walk-in wardrobes transform everyday dressing into a luxury experience. Featuring integrated LED lighting, custom drawer dividers, and whisper-quiet sliding mechanisms.",
-    heroImage: "/images/hero/wardrobe.png",
+    slug: "outdoor-kitchens",
+    title: "Outdoor Kitchens",
+    label: "Outdoor Kitchens",
+    tagline: "Al Fresco Luxury, Engineered for the Elements",
+    overview: "Our outdoor kitchens transform your exterior spaces into premium culinary destinations. Featuring weather-resistant marine-grade stainless steel, integrated grills, and bespoke masonry to withstand the elements while maintaining luxury aesthetics.",
+    heroImage: "/images/projects/project_open_kitchen_1784361404302.png",
     
     configurations: [
       {
-        id: "doors",
-        title: "Door Systems",
-        description: "Choose from open-concept layouts, slim-profile sliding glass doors, or traditional hinged doors with soft-close integration.",
-        image: "/images/hero/wardrobe.png"
+        id: "cooking",
+        title: "Cooking Systems",
+        description: "Choose from built-in gas grills, wood-fired pizza ovens, and powerful side burners engineered for high-performance outdoor cooking.",
+        image: "/images/projects/project_open_kitchen_1784361404302.png"
       },
       {
-        id: "internals",
-        title: "Internal Organizers",
-        description: "Velvet-lined jewellery trays, integrated watch winders, and pull-out shoe racks tailored to your specific collection.",
+        id: "weatherproofing",
+        title: "Weatherproof Cabinetry",
+        description: "Powder-coated aluminum or marine-grade 316 stainless steel cabinetry with sealed gaskets to protect your utensils and ingredients year-round.",
         image: "/images/difference/diff_storage_1784362863234.png"
       }
     ],
 
     gallery: [
-      "/images/hero/wardrobe.png",
+      "/images/projects/project_open_kitchen_1784361404302.png",
       "/images/difference/diff_storage_1784362863234.png",
       "/images/materials/material_smoked_oak_1784361183682.png",
       "/images/process/process_concept_1784363030238.png"
     ],
     
     materials: [
-      { name: "Smoked Oak", image: "/images/materials/material_smoked_oak_1784361183682.png" },
-      { name: "Fluted Glass", image: "/images/materials/material_white_oak_1784361174113.png" },
-      { name: "Brushed Metal", image: "/images/materials/material_brushed_metal_1784361238481.png" }
+      { name: "Marine Steel", image: "/images/materials/material_brushed_metal_1784361238481.png" },
+      { name: "Dekton Stone", image: "/images/materials/material_marble_1784361227712.png" },
+      { name: "Teak Wood", image: "/images/materials/material_white_oak_1784361174113.png" }
     ],
 
     specs: [
-      { label: "Depth", value: "600–750mm" },
-      { label: "Height", value: "Up to 2700mm" },
-      { label: "Hardware", value: "Hettich TopLine" },
+      { label: "Material", value: "316 Stainless Steel" },
+      { label: "Weather Resistance", value: "IP65 Rated" },
+      { label: "Hardware", value: "Corrosion Resistant" },
       { label: "Warranty", value: "10 Years" }
     ],
 
     faqs: [
       {
-        id: "faq-w1",
-        question: "Do you design custom internal layouts?",
-        answer: "Yes, every wardrobe interior is designed entirely around your specific wardrobe collection — from long dresses to shoe racks."
+        id: "faq-o1",
+        question: "Do outdoor kitchens require a covered patio?",
+        answer: "While a covered area is ideal, our marine-grade steel and powder-coated cabinets are designed to be fully exposed to the elements without rusting."
       }
     ],
 
     relatedProjects: [
       {
-        title: "The Glass Penthouse",
-        location: "Bangalore",
-        image: "/images/hero/wardrobe.png",
+        title: "The Coastal Terrace",
+        location: "Goa",
+        image: "/images/projects/project_open_kitchen_1784361404302.png",
         href: "/projects"
       }
     ]
