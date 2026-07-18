@@ -15,7 +15,7 @@ export function BlogFilters({ categories, activeCategory, onCategoryChange, sear
             {categories.map((category) => {
               const isActive = activeCategory === category;
               return (
-                <button
+                <button suppressHydrationWarning
                   key={category}
                   onClick={() => onCategoryChange(category)}
                   className={cn(
@@ -33,7 +33,7 @@ export function BlogFilters({ categories, activeCategory, onCategoryChange, sear
 
           {/* Search Input */}
           <div className="relative w-full lg:w-72">
-            <input 
+            <input suppressHydrationWarning 
               type="text"
               placeholder="Search articles..."
               value={searchQuery}

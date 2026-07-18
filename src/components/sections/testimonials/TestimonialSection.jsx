@@ -202,7 +202,7 @@ export function TestimonialSection() {
               const isActive = activeIndex === idx;
               
               return (
-                <button
+                <button suppressHydrationWarning
                   key={story.id}
                   onClick={() => setActiveIndex(idx)}
                   className={cn(

@@ -115,7 +115,7 @@ export function Navbar() {
           </div>
 
           {/* Mobile Menu Toggle */}
-          <button 
+          <button suppressHydrationWarning 
             className="lg:hidden p-2 text-heading -mr-2 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary rounded-full transition-colors"
             onClick={() => setMobileMenuOpen(true)}
             aria-label="Open Menu"
@@ -151,7 +151,7 @@ export function Navbar() {
                 Kitchens
               </span>
             </Link>
-            <button 
+            <button suppressHydrationWarning 
               className="p-3 bg-surface rounded-full border border-border text-heading focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary"
               onClick={() => setMobileMenuOpen(false)}
               aria-label="Close Menu"

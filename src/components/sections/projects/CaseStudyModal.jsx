@@ -82,7 +82,7 @@ export function CaseStudyModal({ project, isOpen, onClose }) {
         aria-labelledby="modal-title"
       >
         {/* Close Button */}
-        <button
+        <button suppressHydrationWarning
           onClick={onClose}
           className="absolute top-6 right-6 sm:top-8 sm:right-8 z-50 w-12 h-12 flex items-center justify-center rounded-full bg-black/10 backdrop-blur-md text-heading transition-transform duration-300 hover:scale-110 hover:bg-black/20 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary"
           aria-label="Close case study"

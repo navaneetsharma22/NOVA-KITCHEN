@@ -165,14 +165,14 @@ export function CoverflowCarousel({ projects }) {
         })}
 
         {/* Shift Buttons */}
-        <button 
+        <button suppressHydrationWarning 
           onClick={goPrev}
           className="absolute left-4 sm:left-8 z-[200] w-12 h-12 rounded-full bg-white/80 backdrop-blur-md flex items-center justify-center text-heading shadow-lg hover:bg-white hover:scale-110 transition-all duration-300"
           aria-label="Previous Project"
         >
           <ChevronLeft className="w-6 h-6" />
         </button>
-        <button 
+        <button suppressHydrationWarning 
           onClick={goNext}
           className="absolute right-4 sm:right-8 z-[200] w-12 h-12 rounded-full bg-white/80 backdrop-blur-md flex items-center justify-center text-heading shadow-lg hover:bg-white hover:scale-110 transition-all duration-300"
           aria-label="Next Project"
@@ -222,7 +222,7 @@ export function CoverflowCarousel({ projects }) {
 
           {/* Action Block */}
           <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-4 lg:pb-2">
-            <button 
+            <button suppressHydrationWarning 
               onClick={() => setIsModalOpen(true)}
               className="inline-flex h-14 items-center justify-center rounded-full bg-heading px-10 font-sans text-sm font-semibold text-white transition-all duration-300 hover:bg-black hover:scale-[1.02] hover:shadow-[0_8px_30px_rgba(31,31,31,0.2)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-heading"
             >

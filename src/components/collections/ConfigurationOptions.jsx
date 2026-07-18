@@ -69,7 +69,7 @@ export function ConfigurationOptions({ collection }) {
               {configurations.map((config, idx) => {
                 const isActive = activeTab === idx;
                 return (
-                  <button
+                  <button suppressHydrationWarning
                     key={config.id}
                     onClick={() => setActiveTab(idx)}
                     className={cn(

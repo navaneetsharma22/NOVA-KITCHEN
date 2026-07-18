@@ -63,7 +63,7 @@ export function CollectionMaterials({ collection }) {
               {materials.map((mat, idx) => {
                 const isActive = activeMat === idx;
                 return (
-                  <button
+                  <button suppressHydrationWarning
                     key={idx}
                     onClick={() => setActiveMat(idx)}
                     className={cn(

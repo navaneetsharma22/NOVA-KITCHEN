@@ -146,7 +146,7 @@ export function DifferenceSection() {
                 const Icon = feature.icon;
                 
                 return (
-                  <button
+                  <button suppressHydrationWarning
                     key={feature.id}
                     onMouseEnter={() => setActiveIndex(idx)}
                     onClick={() => setActiveIndex(idx)}
@@ -212,7 +212,7 @@ export function DifferenceSection() {
 
               {/* Premium CTA */}
               <div className="mt-auto">
-                <button className="inline-flex h-14 items-center justify-center rounded-full bg-primary px-10 font-sans text-sm font-semibold text-white transition-all duration-300 hover:bg-primary-hover hover:scale-[1.02] hover:shadow-[0_8px_30px_rgba(196,106,60,0.25)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2">
+                <button suppressHydrationWarning className="inline-flex h-14 items-center justify-center rounded-full bg-primary px-10 font-sans text-sm font-semibold text-white transition-all duration-300 hover:bg-primary-hover hover:scale-[1.02] hover:shadow-[0_8px_30px_rgba(196,106,60,0.25)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2">
                   Discover Our Process
                 </button>
               </div>

@@ -55,7 +55,7 @@ export function CollectionFAQs({ collection }) {
                     : "border-[#EAE5DF]/50 hover:border-[#EAE5DF]"
                 )}
               >
-                <button
+                <button suppressHydrationWarning
                   onClick={() => setOpenIndex(isOpen ? -1 : idx)}
                   className="w-full flex items-center justify-between text-left px-6 sm:px-8 py-6 focus-visible:outline-none"
                   aria-expanded={isOpen}

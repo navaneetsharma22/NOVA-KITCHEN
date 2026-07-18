@@ -14,7 +14,7 @@ const AUTOPLAY_DELAY = 7;
 
 const SliderControls = memo(({ onPrev, onNext }) => (
   <div className="absolute z-30 bottom-8 sm:bottom-10 right-6 sm:right-12 flex space-x-2 sm:space-x-3">
-    <button 
+    <button suppressHydrationWarning 
       onClick={onPrev}
       className="h-10 w-10 sm:h-12 sm:w-12 rounded-full border border-white/20 flex items-center justify-center text-white backdrop-blur-md transition-all duration-300 hover:bg-white hover:text-heading hover:scale-105 active:scale-95 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white/50"
       aria-label="Previous Slide"
@@ -22,7 +22,7 @@ const SliderControls = memo(({ onPrev, onNext }) => (
     >
       <ChevronLeft className="w-4 h-4 sm:w-5 sm:h-5" strokeWidth={1.5} aria-hidden="true" />
     </button>
-    <button 
+    <button suppressHydrationWarning 
       onClick={onNext}
       className="h-10 w-10 sm:h-12 sm:w-12 rounded-full border border-white/20 flex items-center justify-center text-white backdrop-blur-md transition-all duration-300 hover:bg-white hover:text-heading hover:scale-105 active:scale-95 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white/50"
       aria-label="Next Slide"

@@ -105,7 +105,7 @@ export function MaterialLibrary() {
           <span className="mb-4 sm:mb-6 block font-sans text-xs sm:text-sm font-semibold uppercase tracking-[0.2em] text-[#C46A3C]">
             Premium Materials
           </span>
-          <h2 className="mb-6 font-heading text-4xl sm:text-5xl lg:text-6xl font-medium leading-[1.1]">
+          <h2 className="mb-6 font-heading text-4xl sm:text-5xl lg:text-6xl font-medium leading-[1.1] text-white">
             Crafted With The Finest Materials
           </h2>
           <p className="font-sans text-base sm:text-lg leading-relaxed text-[#EAE5DF] max-w-2xl">
@@ -123,7 +123,7 @@ export function MaterialLibrary() {
               {materials.map((mat, idx) => {
                 const isActive = activeIndex === idx;
                 return (
-                  <button
+                  <button suppressHydrationWarning
                     key={mat.id}
                     onClick={() => setActiveIndex(idx)}
                     className="group relative flex items-center w-full text-left py-6 border-b border-white/10 last:border-0 focus-visible:outline-none focus-visible:bg-white/5"
@@ -156,7 +156,7 @@ export function MaterialLibrary() {
               {materials.map((mat, idx) => {
                 const isActive = activeIndex === idx;
                 return (
-                  <button
+                  <button suppressHydrationWarning
                     key={mat.id}
                     onClick={() => setActiveIndex(idx)}
                     className={cn(

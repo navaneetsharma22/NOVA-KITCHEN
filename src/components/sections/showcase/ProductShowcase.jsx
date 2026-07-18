@@ -111,7 +111,7 @@ export function ProductShowcase() {
               
               return (
                 <div key={product.id} className="group relative border-b border-[#EAE5DF] last:border-0">
-                  <button
+                  <button suppressHydrationWarning
                     onClick={() => setActiveIndex(idx)}
                     className={cn(
                       "w-full flex items-start text-left py-6 sm:py-8 transition-colors duration-500 hover:bg-[#FBF8F4]/50 focus-visible:outline-none focus-visible:bg-[#FBF8F4]",

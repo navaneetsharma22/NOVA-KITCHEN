@@ -19,13 +19,13 @@ export function BlogNewsletter() {
         </p>
 
         <form className="w-full max-w-md relative flex items-center" onSubmit={(e) => e.preventDefault()}>
-          <input
+          <input suppressHydrationWarning
             type="email"
             placeholder="Enter your email address"
             className="w-full h-14 bg-transparent border-b border-white/20 text-white font-sans text-sm placeholder:text-white/40 focus:outline-none focus:border-white transition-colors pl-2 pr-12"
             required
           />
-          <button 
+          <button suppressHydrationWarning 
             type="submit"
             className="absolute right-0 top-1/2 -translate-y-1/2 w-10 h-10 flex items-center justify-center text-[#C46A3C] hover:text-white transition-colors"
           >

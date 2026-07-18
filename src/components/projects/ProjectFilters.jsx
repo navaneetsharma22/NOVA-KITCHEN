@@ -11,7 +11,7 @@ export function ProjectFilters({ categories, activeCategory, onCategoryChange })
           {categories.map((category) => {
             const isActive = activeCategory === category;
             return (
-              <button
+              <button suppressHydrationWarning
                 key={category}
                 onClick={() => onCategoryChange(category)}
                 className={cn(

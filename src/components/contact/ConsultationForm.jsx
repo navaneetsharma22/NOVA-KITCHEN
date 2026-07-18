@@ -90,7 +90,7 @@ export function ConsultationForm() {
         <span className="font-sans text-[10px] font-bold uppercase tracking-widest text-[#A8A39D]">Project Type</span>
         <div className="flex flex-wrap gap-3">
           {projectTypes.map(type => (
-            <button key={type} suppressHydrationWarning type="button" onClick={() => setFormState({...formState, projectType: type})}
+            <button suppressHydrationWarning key={type} suppressHydrationWarning type="button" onClick={() => setFormState({...formState, projectType: type})}
               className={cn("px-5 py-2.5 rounded-full font-sans text-xs sm:text-sm transition-all focus-visible:outline-none",
                 formState.projectType === type ? "bg-[#1F1F1F] text-white" : "bg-[#FBF8F4] text-[#5F6368] hover:bg-[#EAE5DF]"
               )}
@@ -106,7 +106,7 @@ export function ConsultationForm() {
         <span className="font-sans text-[10px] font-bold uppercase tracking-widest text-[#A8A39D]">Estimated Timeline</span>
         <div className="flex flex-wrap gap-3">
           {timelines.map(time => (
-            <button key={time} suppressHydrationWarning type="button" onClick={() => setFormState({...formState, timeline: time})}
+            <button suppressHydrationWarning key={time} suppressHydrationWarning type="button" onClick={() => setFormState({...formState, timeline: time})}
               className={cn("px-5 py-2.5 rounded-full font-sans text-xs sm:text-sm transition-all focus-visible:outline-none",
                 formState.timeline === time ? "bg-[#1F1F1F] text-white" : "bg-[#FBF8F4] text-[#5F6368] hover:bg-[#EAE5DF]"
               )}
@@ -119,7 +119,7 @@ export function ConsultationForm() {
 
       {/* Message Area */}
       <div className="relative w-full mt-4">
-        <textarea name="message" id="message" rows="4" value={formState.message} onChange={handleChange}
+        <textarea suppressHydrationWarning name="message" id="message" rows="4" value={formState.message} onChange={handleChange}
           className="peer w-full border-b border-[#EAE5DF] bg-transparent text-heading font-sans text-base placeholder-transparent focus:outline-none focus:border-[#C46A3C] transition-colors resize-none py-2" placeholder="Project Details" />
         <label htmlFor="message" className="absolute left-0 -top-3.5 text-xs font-sans font-bold uppercase tracking-widest text-[#A8A39D] transition-all peer-placeholder-shown:text-base peer-placeholder-shown:normal-case peer-placeholder-shown:tracking-normal peer-placeholder-shown:text-[#A8A39D] peer-placeholder-shown:top-2 peer-focus:-top-3.5 peer-focus:text-xs peer-focus:font-bold peer-focus:uppercase peer-focus:tracking-widest peer-focus:text-[#C46A3C]">
           Project Details (Optional)
@@ -127,7 +127,7 @@ export function ConsultationForm() {
       </div>
 
       {/* Submit Button */}
-      <button 
+      <button suppressHydrationWarning 
         suppressHydrationWarning
         type="submit" 
         disabled={isSubmitting}

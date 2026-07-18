@@ -139,7 +139,7 @@ export function ProcessSection() {
                   onMouseEnter={() => window.innerWidth >= 1024 && setActiveIndex(idx)}
                 >
                   {/* Accordion Header */}
-                  <button
+                  <button suppressHydrationWarning
                     onClick={() => setActiveIndex(idx)}
                     className="w-full flex items-center justify-between text-left focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary rounded-xl"
                     aria-expanded={isActive}

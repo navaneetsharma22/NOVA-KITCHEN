@@ -155,7 +155,7 @@ export function FAQSection() {
                       : "border-[#EAE5DF]/50 hover:border-[#EAE5DF] hover:shadow-[0_10px_30px_rgba(31,31,31,0.02)]"
                   )}
                 >
-                  <button
+                  <button suppressHydrationWarning
                     onClick={() => setOpenIndex(isOpen ? -1 : idx)}
                     className="w-full flex items-center justify-between text-left px-6 sm:px-8 py-6 focus-visible:outline-none"
                     aria-expanded={isOpen}

@@ -45,7 +45,7 @@ export function TableOfContents({ headings }) {
       <ul className="space-y-3 border-l border-[#EAE5DF]">
         {headings.map((heading) => (
           <li key={heading.id}>
-            <button
+            <button suppressHydrationWarning
               onClick={() => scrollToHeading(heading.id)}
               className={cn(
                 "block text-left pl-4 font-sans text-sm transition-colors duration-300 relative focus-visible:outline-none",

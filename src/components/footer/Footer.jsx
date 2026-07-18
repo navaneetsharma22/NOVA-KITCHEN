@@ -201,14 +201,14 @@ export function Footer() {
               Receive curated design inspiration, material trends and project stories from Nova Kitchens.
             </p>
             <form className="flex w-full relative" onSubmit={(e) => e.preventDefault()}>
-              <input 
+              <input suppressHydrationWarning 
                 type="email" 
                 placeholder="Enter your email address" 
                 className="w-full h-14 bg-white border border-[#EAE5DF] rounded-full pl-6 pr-32 font-sans text-sm text-heading placeholder:text-[#5F6368]/60 focus:outline-none focus:border-[#C46A3C] focus:ring-1 focus:ring-[#C46A3C] transition-all"
                 required
                 aria-label="Email Address for Newsletter"
               />
-              <button 
+              <button suppressHydrationWarning 
                 type="submit" 
                 className="absolute right-1.5 top-1.5 bottom-1.5 inline-flex items-center justify-center rounded-full bg-heading px-6 font-sans text-xs font-semibold text-white transition-all duration-300 hover:bg-[#C46A3C] hover:shadow-md focus-visible:outline-none"
               >
