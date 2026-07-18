@@ -3,6 +3,7 @@
 import React, { useState, useEffect, useRef, useCallback, memo } from "react";
 import Image from "next/image";
 import { ChevronLeft, ChevronRight } from "lucide-react";
+import Link from "next/link";
 import { heroSlides } from "@/data/heroSlides";
 import { cn } from "@/lib/utils";
 import gsap from "gsap";
@@ -306,18 +307,20 @@ export function Hero() {
                 
                 {/* Buttons (Keyboard accessible via focus styles) */}
                 <div className="flex flex-col sm:flex-row w-full sm:w-auto items-stretch sm:items-center gap-3 sm:gap-4 pt-4 sm:pt-6">
-                  <button 
+                  <Link 
+                    href="/collections"
                     tabIndex={currentIndex === index ? 0 : -1}
                     className="btn inline-flex w-full sm:w-auto h-12 lg:h-14 items-center justify-center rounded-full bg-primary px-8 font-sans text-sm font-semibold text-white transition-all duration-300 hover:bg-primary-hover hover:scale-[1.02] hover:shadow-[0_8px_30px_rgba(196,106,60,0.25)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white/50"
                   >
                     {slide.primaryCta}
-                  </button>
-                  <button 
+                  </Link>
+                  <Link 
+                    href="/contact"
                     tabIndex={currentIndex === index ? 0 : -1}
                     className="btn inline-flex w-full sm:w-auto h-12 lg:h-14 items-center justify-center rounded-full bg-transparent border border-white/30 px-8 font-sans text-sm font-semibold text-white transition-all duration-300 hover:bg-white hover:text-heading hover:scale-[1.02] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white/50"
                   >
                     {slide.secondaryCta}
-                  </button>
+                  </Link>
                 </div>
               </div>
             ))}

@@ -24,8 +24,8 @@ export function ContactHero() {
           <span className="mb-6 block font-sans text-xs sm:text-sm font-semibold uppercase tracking-[0.2em] text-[#C46A3C]">
             Private Consultation
           </span>
-          <h1 className="mb-8 font-heading text-5xl sm:text-7xl lg:text-8xl font-medium leading-[1.1]">
-            Let's Discuss Your Vision
+          <h1 className="mb-8 font-heading text-5xl sm:text-7xl lg:text-8xl font-medium leading-[1.1] text-white">
+            Let's Connect
           </h1>
           <p className="font-sans text-lg sm:text-xl text-[#A8A39D] leading-relaxed max-w-2xl">
             Whether you are beginning a complete architectural build or refining a single space, our design team is available for private appointments at our studio or on-site.

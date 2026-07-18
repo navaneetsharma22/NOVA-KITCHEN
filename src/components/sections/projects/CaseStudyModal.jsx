@@ -2,6 +2,7 @@
 
 import React, { useEffect, useRef } from "react";
 import Image from "next/image";
+import Link from "next/link";
 import { X, ArrowRight, Quote } from "lucide-react";
 import gsap from "gsap";
 
@@ -173,9 +174,9 @@ export function CaseStudyModal({ project, isOpen, onClose }) {
                 <span className="font-heading text-2xl text-heading mb-2">Ready to start your project?</span>
                 <span className="font-sans text-sm text-[#5F6368]">Our design team is ready to assist you.</span>
               </div>
-              <button className="inline-flex h-14 items-center justify-center rounded-full bg-primary px-10 font-sans text-sm font-semibold text-white transition-all duration-300 hover:bg-primary-hover hover:scale-[1.02] hover:shadow-[0_8px_30px_rgba(196,106,60,0.25)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2">
+              <Link href="/contact" className="inline-flex h-14 items-center justify-center rounded-full bg-primary px-10 font-sans text-sm font-semibold text-white transition-all duration-300 hover:bg-primary-hover hover:scale-[1.02] hover:shadow-[0_8px_30px_rgba(196,106,60,0.25)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2">
                 Book Consultation
-              </button>
+              </Link>
             </div>
 
           </div>

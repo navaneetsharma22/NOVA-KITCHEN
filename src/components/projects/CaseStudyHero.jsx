@@ -77,7 +77,7 @@ export function CaseStudyHero({ project }) {
               </span>
             </div>
 
-            <h1 className="font-heading text-5xl sm:text-7xl lg:text-8xl font-medium leading-[1.1] mb-8">
+            <h1 className="font-heading text-5xl sm:text-7xl lg:text-8xl font-medium leading-[1.1] mb-8 text-white">
               {project.title}
             </h1>
 

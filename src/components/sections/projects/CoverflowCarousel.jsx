@@ -2,6 +2,7 @@
 
 import React, { useState, useEffect, useRef, useCallback } from "react";
 import Image from "next/image";
+import Link from "next/link";
 import { ArrowRight, ChevronLeft, ChevronRight } from "lucide-react";
 import { CaseStudyModal } from "./CaseStudyModal";
 
@@ -227,10 +228,10 @@ export function CoverflowCarousel({ projects }) {
             >
               View Case Study
             </button>
-            <button className="inline-flex h-14 items-center justify-center space-x-2 rounded-full bg-transparent border border-[#EAE5DF] px-8 font-sans text-sm font-semibold text-heading transition-all duration-300 hover:bg-[#FBF8F4] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-heading">
+            <Link href="/contact" className="inline-flex h-14 items-center justify-center space-x-2 rounded-full bg-transparent border border-[#EAE5DF] px-8 font-sans text-sm font-semibold text-heading transition-all duration-300 hover:bg-[#FBF8F4] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-heading">
               <span>Book Consultation</span>
               <ArrowRight className="w-4 h-4" />
-            </button>
+            </Link>
           </div>
 
         </div>

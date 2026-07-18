@@ -2,6 +2,7 @@
 
 import React, { useState, useEffect, useRef } from "react";
 import Image from "next/image";
+import Link from "next/link";
 import { ChevronDown, Check, Phone } from "lucide-react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
@@ -127,13 +128,13 @@ export function FAQSection() {
               </div>
 
               <div className="flex flex-col sm:flex-row lg:flex-col gap-4 mt-auto">
-                <button className="flex-1 h-14 inline-flex items-center justify-center rounded-full bg-heading px-8 font-sans text-sm font-semibold text-white transition-all duration-300 hover:bg-black hover:scale-[1.02] hover:shadow-[0_8px_30px_rgba(31,31,31,0.2)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-heading">
+                <Link href="/contact" className="flex-1 h-14 inline-flex items-center justify-center rounded-full bg-heading px-8 font-sans text-sm font-semibold text-white transition-all duration-300 hover:bg-black hover:scale-[1.02] hover:shadow-[0_8px_30px_rgba(31,31,31,0.2)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-heading">
                   Book Free Consultation
-                </button>
-                <button className="flex-1 h-14 inline-flex items-center justify-center rounded-full bg-transparent border border-[#EAE5DF] px-8 font-sans text-sm font-semibold text-heading transition-all duration-300 hover:bg-[#FBF8F4] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-heading">
+                </Link>
+                <a href="tel:+919876543210" className="flex-1 h-14 inline-flex items-center justify-center rounded-full bg-transparent border border-[#EAE5DF] px-8 font-sans text-sm font-semibold text-heading transition-all duration-300 hover:bg-[#FBF8F4] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-heading">
                   <Phone className="w-4 h-4 mr-2" />
                   Call Our Design Team
-                </button>
+                </a>
               </div>
 
             </div>

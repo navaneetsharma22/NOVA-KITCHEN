@@ -1,6 +1,7 @@
 "use client";
 
 import React, { useRef, useEffect } from "react";
+import Link from "next/link";
 import { ArrowRight, Check, Phone, Mail, Clock } from "lucide-react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
@@ -124,13 +125,13 @@ export function CTASection() {
           </p>
 
           <div className="flex flex-col sm:flex-row items-center gap-4 sm:gap-6 w-full sm:w-auto">
-            <button className="w-full sm:w-auto h-14 inline-flex items-center justify-center rounded-full bg-heading px-10 font-sans text-sm font-semibold text-white transition-all duration-300 hover:bg-black hover:scale-[1.02] hover:shadow-[0_8px_30px_rgba(31,31,31,0.2)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-heading">
+            <Link href="/contact" className="w-full sm:w-auto h-14 inline-flex items-center justify-center rounded-full bg-heading px-10 font-sans text-sm font-semibold text-white transition-all duration-300 hover:bg-black hover:scale-[1.02] hover:shadow-[0_8px_30px_rgba(31,31,31,0.2)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-heading">
               Book Free Consultation
-            </button>
-            <button className="group w-full sm:w-auto h-14 inline-flex items-center justify-center rounded-full bg-transparent border border-heading/20 px-10 font-sans text-sm font-semibold text-heading transition-all duration-300 hover:border-heading hover:bg-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-heading">
+            </Link>
+            <Link href="/collections" className="group w-full sm:w-auto h-14 inline-flex items-center justify-center rounded-full bg-transparent border border-heading/20 px-10 font-sans text-sm font-semibold text-heading transition-all duration-300 hover:border-heading hover:bg-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-heading">
               <span>Explore Our Collections</span>
               <ArrowRight className="w-4 h-4 ml-2 transition-transform duration-300 group-hover:translate-x-1" />
-            </button>
+            </Link>
           </div>
         </div>
 

@@ -2,6 +2,7 @@
 
 import React, { useState, useEffect, useRef } from "react";
 import Image from "next/image";
+import Link from "next/link";
 import { Check, ArrowRight } from "lucide-react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
@@ -238,13 +239,13 @@ function ProductDetails({ product }) {
 
         {/* CTAs */}
         <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-4 mt-auto pt-4 border-t border-[#EAE5DF]">
-          <button className="inline-flex h-12 items-center justify-center rounded-full bg-primary px-8 font-sans text-sm font-semibold text-white transition-all duration-300 hover:bg-primary-hover hover:scale-[1.02] hover:shadow-[0_8px_30px_rgba(196,106,60,0.25)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2">
+          <Link href="/collections" className="inline-flex h-12 items-center justify-center rounded-full bg-primary px-8 font-sans text-sm font-semibold text-white transition-all duration-300 hover:bg-primary-hover hover:scale-[1.02] hover:shadow-[0_8px_30px_rgba(196,106,60,0.25)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2">
             {product.primaryCta}
-          </button>
-          <button className="inline-flex h-12 items-center justify-center space-x-2 rounded-full bg-transparent px-8 font-sans text-sm font-semibold text-heading transition-all duration-300 hover:bg-[#FBF8F4] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2">
+          </Link>
+          <Link href="/contact" className="inline-flex h-12 items-center justify-center space-x-2 rounded-full bg-transparent px-8 font-sans text-sm font-semibold text-heading transition-all duration-300 hover:bg-[#FBF8F4] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2">
             <span>{product.secondaryCta}</span>
             <ArrowRight className="w-4 h-4" />
-          </button>
+          </Link>
         </div>
       </div>
 

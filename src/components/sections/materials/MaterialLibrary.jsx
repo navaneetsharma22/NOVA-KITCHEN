@@ -201,7 +201,7 @@ export function MaterialLibrary() {
                   <span className="block font-sans text-xs font-semibold uppercase tracking-widest text-primary mb-3">
                     {activeMaterial.category} Collection
                   </span>
-                  <h3 className="font-heading text-3xl sm:text-4xl font-medium">
+                  <h3 className="font-heading text-3xl sm:text-4xl font-medium text-white">
                     {activeMaterial.name}
                   </h3>
                 </div>
