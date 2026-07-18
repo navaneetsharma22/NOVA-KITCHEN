@@ -2,18 +2,12 @@
 
 import React, { useState, useEffect, useRef, useCallback } from "react";
 import Image from "next/image";
-import gsap from "gsap";
-import { ArrowRight } from "lucide-react";
+import { ArrowRight, ChevronLeft, ChevronRight } from "lucide-react";
 import { CaseStudyModal } from "./CaseStudyModal";
-import { cn } from "@/lib/utils";
 
 export function CoverflowCarousel({ projects }) {
   const [activeIndex, setActiveIndex] = useState(0);
   const [isModalOpen, setIsModalOpen] = useState(false);
-  
-  const containerRef = useRef(null);
-  const slidesRef = useRef([]);
-  const detailsRef = useRef(null);
   
   // Interaction State
   const touchState = useRef({ startX: null, endX: null });
@@ -36,53 +30,6 @@ export function CoverflowCarousel({ projects }) {
   const goPrev = useCallback(() => {
     setActiveIndex((prev) => wrapIndex(prev - 1));
   }, [wrapIndex]);
-
-  // GSAP Coverflow Logic
-  useEffect(() => {
-    let ctx = gsap.context(() => {
-      slidesRef.current.forEach((slide, i) => {
-        if (!slide) return;
-        
-        // Calculate shortest distance in circular array
-        let diff = i - activeIndex;
-        if (diff > total / 2) diff -= total;
-        if (diff < -total / 2) diff += total;
-
-        const isCenter = diff === 0;
-        const absDiff = Math.abs(diff);
-
-        // Math for offsets
-        // Increase overlap slightly so side slides peek out from behind
-        const xOffset = diff * 65; 
-        const scale = isCenter ? 1 : Math.max(0.6, 0.82 - (absDiff - 1) * 0.1);
-        const opacity = isCenter ? 1 : Math.max(0, 0.55 - (absDiff - 1) * 0.3);
-        const blur = isCenter ? 0 : Math.min(8, absDiff * 4);
-        const zIndex = 100 - absDiff;
-        const rotateY = diff * -15; // Slight rotation toward center
-
-        gsap.to(slide, {
-          xPercent: xOffset,
-          scale: scale,
-          opacity: opacity,
-          zIndex: zIndex,
-          rotationY: rotateY,
-          filter: `blur(${blur}px)`,
-          duration: 0.8,
-          ease: "power3.out"
-        });
-      });
-
-      // Animate Details Section (bottom text)
-      if (detailsRef.current) {
-        gsap.fromTo(detailsRef.current.children,
-          { opacity: 0, y: 15 },
-          { opacity: 1, y: 0, duration: 0.6, stagger: 0.05, ease: "power2.out", overwrite: true }
-        );
-      }
-    }, containerRef);
-    
-    return () => ctx.revert();
-  }, [activeIndex, total]);
 
   // Keyboard Events
   useEffect(() => {
@@ -110,7 +57,7 @@ export function CoverflowCarousel({ projects }) {
     
     wheelTimeout.current = setTimeout(() => {
       wheelTimeout.current = null;
-    }, 400); // 400ms debounce to prevent hyper-scrolling
+    }, 400); // 400ms debounce
   };
 
   // Touch Events (Mobile)
@@ -154,10 +101,9 @@ export function CoverflowCarousel({ projects }) {
   return (
     <div className="w-full flex flex-col">
       
-      {/* 3D Carousel Stage */}
+      {/* Premium Crossfade Slider Stage */}
       <div 
-        ref={containerRef}
-        className="relative w-full h-[400px] sm:h-[500px] lg:h-[600px] flex items-center justify-center overflow-hidden touch-none [perspective:1200px]"
+        className="relative w-full h-[400px] sm:h-[500px] lg:h-[600px] flex items-center justify-center overflow-hidden touch-none"
         onWheel={handleWheel}
         onTouchStart={handleTouchStart}
         onTouchMove={handleTouchMove}
@@ -167,35 +113,76 @@ export function CoverflowCarousel({ projects }) {
         onPointerUp={handlePointerUp}
         onPointerLeave={handlePointerUp}
       >
-        {projects.map((project, i) => (
-          <div
-            key={project.id}
-            ref={el => slidesRef.current[i] = el}
-            className="absolute w-[85%] max-w-[900px] aspect-[16/10] sm:aspect-[16/9] cursor-grab active:cursor-grabbing rounded-[24px] sm:rounded-[32px] overflow-hidden shadow-[0_30px_60px_rgba(31,31,31,0.15)]"
-            onClick={() => {
-              if (i !== activeIndex) setActiveIndex(i);
-            }}
-          >
-            <Image
-              src={project.image}
-              alt={project.title}
-              fill
-              className="object-cover pointer-events-none"
-              sizes="(max-width: 1024px) 100vw, 80vw"
-              priority={i === activeIndex || i === wrapIndex(activeIndex + 1) || i === wrapIndex(activeIndex - 1)}
-            />
-            {/* Soft overlay on non-active slides to enhance depth */}
-            <div className={cn(
-              "absolute inset-0 bg-black/20 transition-opacity duration-500 pointer-events-none",
-              i === activeIndex ? "opacity-0" : "opacity-100"
-            )} />
-          </div>
-        ))}
+        {projects.map((project, i) => {
+          const isActive = i === activeIndex;
+          const isPrev = i === wrapIndex(activeIndex - 1);
+          const isNext = i === wrapIndex(activeIndex + 1);
+          
+          let positionClass = "";
+          let visibilityClass = "";
+          let zIndexClass = "z-0";
+
+          if (isActive) {
+            positionClass = "left-1/2 -translate-x-1/2 scale-100";
+            visibilityClass = "opacity-100 blur-0";
+            zIndexClass = "z-20";
+          } else if (isPrev) {
+            positionClass = "left-[-20%] sm:left-[-10%] lg:left-[5%] scale-[0.85]";
+            visibilityClass = "opacity-45 blur-[8px]";
+            zIndexClass = "z-10";
+          } else if (isNext) {
+            positionClass = "right-[-20%] sm:right-[-10%] lg:right-[5%] scale-[0.85]";
+            visibilityClass = "opacity-45 blur-[8px]";
+            zIndexClass = "z-10";
+          } else {
+            // Hidden slides sit directly behind the active slide, invisible.
+            positionClass = "left-1/2 -translate-x-1/2 scale-[0.85]";
+            visibilityClass = "opacity-0 blur-[8px] pointer-events-none";
+            zIndexClass = "z-0";
+          }
+
+          return (
+            <div
+              key={project.id}
+              // CRITICAL: We restrict transition strictly to opacity and filter to prevent translation/zoom animations during swaps.
+              style={{ transitionProperty: "opacity, filter" }}
+              className={`absolute w-[85%] max-w-[900px] aspect-[16/10] sm:aspect-[16/9] cursor-grab active:cursor-grabbing rounded-[24px] sm:rounded-[32px] overflow-hidden shadow-[0_30px_60px_rgba(31,31,31,0.15)] duration-500 ease-in-out ${positionClass} ${visibilityClass} ${zIndexClass}`}
+              onClick={() => {
+                if (!isActive) setActiveIndex(i);
+              }}
+            >
+              <Image
+                src={project.image}
+                alt={project.title}
+                fill
+                className="object-cover pointer-events-none"
+                sizes="(max-width: 1024px) 100vw, 80vw"
+                priority={true}
+              />
+            </div>
+          );
+        })}
+
+        {/* Shift Buttons */}
+        <button 
+          onClick={goPrev}
+          className="absolute left-4 sm:left-8 z-[200] w-12 h-12 rounded-full bg-white/80 backdrop-blur-md flex items-center justify-center text-heading shadow-lg hover:bg-white hover:scale-110 transition-all duration-300"
+          aria-label="Previous Project"
+        >
+          <ChevronLeft className="w-6 h-6" />
+        </button>
+        <button 
+          onClick={goNext}
+          className="absolute right-4 sm:right-8 z-[200] w-12 h-12 rounded-full bg-white/80 backdrop-blur-md flex items-center justify-center text-heading shadow-lg hover:bg-white hover:scale-110 transition-all duration-300"
+          aria-label="Next Project"
+        >
+          <ChevronRight className="w-6 h-6" />
+        </button>
       </div>
 
       {/* Active Project Details */}
       <div className="mx-auto w-full max-w-[1440px] px-6 sm:px-8 mt-12 sm:mt-16">
-        <div ref={detailsRef} className="flex flex-col lg:flex-row lg:items-end justify-between gap-8 lg:gap-16">
+        <div className="flex flex-col lg:flex-row lg:items-end justify-between gap-8 lg:gap-16">
           
           {/* Info Block */}
           <div className="flex-1 flex flex-col max-w-2xl">

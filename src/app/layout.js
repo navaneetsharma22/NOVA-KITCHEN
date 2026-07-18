@@ -48,6 +48,7 @@ export const metadata = {
 
 import { Navbar } from "@/components/navigation/Navbar";
 import { Footer } from "@/components/footer/Footer";
+import { GlobalPreloader } from "@/components/ui/GlobalPreloader";
 
 export default function RootLayout({ children }) {
   return (
@@ -57,6 +58,7 @@ export default function RootLayout({ children }) {
       suppressHydrationWarning
     >
       <body className="min-h-full flex flex-col" suppressHydrationWarning>
+        <GlobalPreloader />
         <Navbar />
         <main className="flex-1 flex flex-col">{children}</main>
         <Footer />
