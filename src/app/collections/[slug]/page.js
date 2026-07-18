@@ -9,6 +9,21 @@ import { CollectionFAQs } from "@/components/collections/CollectionFAQs";
 import { RelatedProjects } from "@/components/collections/RelatedProjects";
 import { CTASection } from "@/components/sections/cta/CTASection";
 
+export async function generateMetadata({ params }) {
+  const { slug } = await params;
+  const collection = collectionsDetailed.find((c) => c.slug === slug);
+  if (!collection) return { title: "Collection Not Found" };
+  return {
+    title: `${collection.title} | Nova Kitchens`,
+    description: collection.overview,
+    openGraph: {
+      title: `${collection.title} | Nova Kitchens`,
+      description: collection.overview,
+      images: [collection.heroImage],
+    },
+  };
+}
+
 export async function generateStaticParams() {
   return collectionsDetailed.map((collection) => ({
     slug: collection.slug,

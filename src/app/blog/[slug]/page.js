@@ -8,6 +8,22 @@ import { RelatedJournalArticles } from "@/components/blog/RelatedJournalArticles
 import { BlogNewsletter } from "@/components/blog/BlogNewsletter";
 import { CTASection } from "@/components/sections/cta/CTASection";
 
+export async function generateMetadata({ params }) {
+  const { slug } = await params;
+  const article = journalArticles.find((a) => a.slug === slug);
+  if (!article) return { title: "Article Not Found" };
+  return {
+    title: `${article.title} | Nova Journal`,
+    description: article.shortDescription,
+    openGraph: {
+      title: article.title,
+      description: article.shortDescription,
+      images: [article.image],
+      type: "article",
+    },
+  };
+}
+
 export async function generateStaticParams() {
   return journalArticles.map((article) => ({
     slug: article.slug,

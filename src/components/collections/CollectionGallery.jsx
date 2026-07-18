@@ -69,7 +69,7 @@ export function CollectionGallery({ collection }) {
 
           {/* Image 2 (Medium left) */}
           {gallery[1] && (
-            <div className="gallery-img-container md:col-span-7 group relative w-full aspect-[4/3] rounded-[32px] overflow-hidden shadow-sm">
+            <div className="gallery-img-container md:col-span-7 group relative w-full h-[300px] sm:h-[400px] lg:h-[600px] rounded-[32px] overflow-hidden shadow-sm">
               <Image
                 src={gallery[1]}
                 alt={`${collection.title} Detail 2`}
@@ -83,7 +83,7 @@ export function CollectionGallery({ collection }) {
 
           {/* Image 3 (Small right) */}
           {gallery[2] && (
-            <div className="gallery-img-container md:col-span-5 group relative w-full aspect-[4/3] md:aspect-[3/4] rounded-[32px] overflow-hidden shadow-sm">
+            <div className="gallery-img-container md:col-span-5 group relative w-full h-[300px] sm:h-[400px] lg:h-[600px] rounded-[32px] overflow-hidden shadow-sm">
               <Image
                 src={gallery[2]}
                 alt={`${collection.title} Detail 3`}

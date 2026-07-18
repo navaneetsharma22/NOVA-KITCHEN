@@ -23,7 +23,7 @@ export function CollectionSpecs({ collection }) {
         ease: "power3.out",
         scrollTrigger: {
           trigger: sectionRef.current,
-          start: "top 75%",
+          start: "top 90%",
         }
       });
     }, sectionRef);

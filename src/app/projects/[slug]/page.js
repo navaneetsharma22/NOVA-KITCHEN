@@ -9,6 +9,21 @@ import { ClientStory } from "@/components/projects/ClientStory";
 import { RelatedCaseStudies } from "@/components/projects/RelatedCaseStudies";
 import { CTASection } from "@/components/sections/cta/CTASection";
 
+export async function generateMetadata({ params }) {
+  const { slug } = await params;
+  const project = projects.find((p) => p.slug === slug);
+  if (!project) return { title: "Project Not Found" };
+  return {
+    title: `${project.title} | Nova Kitchens Portfolio`,
+    description: project.shortDescription,
+    openGraph: {
+      title: `${project.title} | Nova Kitchens`,
+      description: project.shortDescription,
+      images: [project.image],
+    },
+  };
+}
+
 export async function generateStaticParams() {
   return projects.map((project) => ({
     slug: project.slug,
