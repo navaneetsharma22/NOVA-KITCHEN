@@ -5,6 +5,7 @@ import Image from "next/image";
 import gsap from "gsap";
 import { ArrowRight } from "lucide-react";
 import { CaseStudyModal } from "./CaseStudyModal";
+import { cn } from "@/lib/utils";
 
 export function CoverflowCarousel({ projects }) {
   const [activeIndex, setActiveIndex] = useState(0);

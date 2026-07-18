@@ -9,11 +9,11 @@ export const collections = [
   },
   {
     id: 2,
-    title: "Kitchen Display Units",
-    label: "Display Units",
-    description: "Elegant glass and wood architectural systems for premium kitchenware organization.",
-    image: "/images/collections/display.png", // Newly generated kitchen display unit image
-    href: "/collections/display-units"
+    title: "Walk-in Wardrobes",
+    label: "Wardrobes",
+    description: "Curated elegance and organized living wrapped in premium materials and intelligent design.",
+    image: "/images/hero/wardrobe.png",
+    href: "/collections/wardrobes"
   },
   {
     id: 3,
@@ -36,15 +36,15 @@ export const collections = [
     title: "TV & Living Units",
     label: "Living",
     description: "Seamless architectural integration bridging the kitchen and living spaces.",
-    image: "/images/collections/kitchen.png", // Stand-in high-quality image
-    href: "/collections/living"
+    image: "/images/collections/kitchen.png",
+    href: "/collections/tv-units"
   },
   {
     id: 6,
-    title: "Vanity & Utility Spaces",
-    label: "Bath & Utility",
-    description: "Premium quartz and wood configurations extending luxury to every routine.",
-    image: "/images/hero/white.png", // Stand-in high-quality image
-    href: "/collections/vanity"
+    title: "Utility Spaces",
+    label: "Utility",
+    description: "Premium configurations extending luxury craftsmanship to every corner of your home.",
+    image: "/images/hero/white.png",
+    href: "/collections/utility"
   }
 ];
