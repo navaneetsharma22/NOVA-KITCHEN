@@ -52,14 +52,14 @@ export function ConsultationForm() {
       {/* Name Row */}
       <div className="flex flex-col sm:flex-row gap-8">
         <div className="relative w-full">
-          <input type="text" name="firstName" id="firstName" required value={formState.firstName} onChange={handleChange}
+          <input suppressHydrationWarning type="text" name="firstName" id="firstName" required value={formState.firstName} onChange={handleChange}
             className="peer w-full h-12 border-b border-[#EAE5DF] bg-transparent text-heading font-sans text-base placeholder-transparent focus:outline-none focus:border-[#C46A3C] transition-colors" placeholder="First Name" />
           <label htmlFor="firstName" className="absolute left-0 -top-3.5 text-xs font-sans font-bold uppercase tracking-widest text-[#A8A39D] transition-all peer-placeholder-shown:text-base peer-placeholder-shown:normal-case peer-placeholder-shown:tracking-normal peer-placeholder-shown:text-[#A8A39D] peer-placeholder-shown:top-3 peer-focus:-top-3.5 peer-focus:text-xs peer-focus:font-bold peer-focus:uppercase peer-focus:tracking-widest peer-focus:text-[#C46A3C]">
             First Name
           </label>
         </div>
         <div className="relative w-full">
-          <input type="text" name="lastName" id="lastName" required value={formState.lastName} onChange={handleChange}
+          <input suppressHydrationWarning type="text" name="lastName" id="lastName" required value={formState.lastName} onChange={handleChange}
             className="peer w-full h-12 border-b border-[#EAE5DF] bg-transparent text-heading font-sans text-base placeholder-transparent focus:outline-none focus:border-[#C46A3C] transition-colors" placeholder="Last Name" />
           <label htmlFor="lastName" className="absolute left-0 -top-3.5 text-xs font-sans font-bold uppercase tracking-widest text-[#A8A39D] transition-all peer-placeholder-shown:text-base peer-placeholder-shown:normal-case peer-placeholder-shown:tracking-normal peer-placeholder-shown:text-[#A8A39D] peer-placeholder-shown:top-3 peer-focus:-top-3.5 peer-focus:text-xs peer-focus:font-bold peer-focus:uppercase peer-focus:tracking-widest peer-focus:text-[#C46A3C]">
             Last Name
@@ -70,14 +70,14 @@ export function ConsultationForm() {
       {/* Contact Row */}
       <div className="flex flex-col sm:flex-row gap-8">
         <div className="relative w-full">
-          <input type="email" name="email" id="email" required value={formState.email} onChange={handleChange}
+          <input suppressHydrationWarning type="email" name="email" id="email" required value={formState.email} onChange={handleChange}
             className="peer w-full h-12 border-b border-[#EAE5DF] bg-transparent text-heading font-sans text-base placeholder-transparent focus:outline-none focus:border-[#C46A3C] transition-colors" placeholder="Email Address" />
           <label htmlFor="email" className="absolute left-0 -top-3.5 text-xs font-sans font-bold uppercase tracking-widest text-[#A8A39D] transition-all peer-placeholder-shown:text-base peer-placeholder-shown:normal-case peer-placeholder-shown:tracking-normal peer-placeholder-shown:text-[#A8A39D] peer-placeholder-shown:top-3 peer-focus:-top-3.5 peer-focus:text-xs peer-focus:font-bold peer-focus:uppercase peer-focus:tracking-widest peer-focus:text-[#C46A3C]">
             Email Address
           </label>
         </div>
         <div className="relative w-full">
-          <input type="tel" name="phone" id="phone" value={formState.phone} onChange={handleChange}
+          <input suppressHydrationWarning type="tel" name="phone" id="phone" value={formState.phone} onChange={handleChange}
             className="peer w-full h-12 border-b border-[#EAE5DF] bg-transparent text-heading font-sans text-base placeholder-transparent focus:outline-none focus:border-[#C46A3C] transition-colors" placeholder="Phone Number (Optional)" />
           <label htmlFor="phone" className="absolute left-0 -top-3.5 text-xs font-sans font-bold uppercase tracking-widest text-[#A8A39D] transition-all peer-placeholder-shown:text-base peer-placeholder-shown:normal-case peer-placeholder-shown:tracking-normal peer-placeholder-shown:text-[#A8A39D] peer-placeholder-shown:top-3 peer-focus:-top-3.5 peer-focus:text-xs peer-focus:font-bold peer-focus:uppercase peer-focus:tracking-widest peer-focus:text-[#C46A3C]">
             Phone Number (Optional)
@@ -90,7 +90,7 @@ export function ConsultationForm() {
         <span className="font-sans text-[10px] font-bold uppercase tracking-widest text-[#A8A39D]">Project Type</span>
         <div className="flex flex-wrap gap-3">
           {projectTypes.map(type => (
-            <button key={type} type="button" onClick={() => setFormState({...formState, projectType: type})}
+            <button key={type} suppressHydrationWarning type="button" onClick={() => setFormState({...formState, projectType: type})}
               className={cn("px-5 py-2.5 rounded-full font-sans text-xs sm:text-sm transition-all focus-visible:outline-none",
                 formState.projectType === type ? "bg-[#1F1F1F] text-white" : "bg-[#FBF8F4] text-[#5F6368] hover:bg-[#EAE5DF]"
               )}
@@ -106,7 +106,7 @@ export function ConsultationForm() {
         <span className="font-sans text-[10px] font-bold uppercase tracking-widest text-[#A8A39D]">Estimated Timeline</span>
         <div className="flex flex-wrap gap-3">
           {timelines.map(time => (
-            <button key={time} type="button" onClick={() => setFormState({...formState, timeline: time})}
+            <button key={time} suppressHydrationWarning type="button" onClick={() => setFormState({...formState, timeline: time})}
               className={cn("px-5 py-2.5 rounded-full font-sans text-xs sm:text-sm transition-all focus-visible:outline-none",
                 formState.timeline === time ? "bg-[#1F1F1F] text-white" : "bg-[#FBF8F4] text-[#5F6368] hover:bg-[#EAE5DF]"
               )}
@@ -128,6 +128,7 @@ export function ConsultationForm() {
 
       {/* Submit Button */}
       <button 
+        suppressHydrationWarning
         type="submit" 
         disabled={isSubmitting}
         className="group relative h-14 w-full sm:w-auto inline-flex items-center justify-center overflow-hidden rounded-full bg-[#1F1F1F] px-8 font-sans text-sm font-semibold text-white transition-all hover:bg-[#C46A3C] focus-visible:outline-none disabled:opacity-70 mt-6"
