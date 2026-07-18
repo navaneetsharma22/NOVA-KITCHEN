@@ -1,14 +1,10 @@
 "use client";
 
+import { gsap, ScrollTrigger, registerGSAP } from "@/lib/gsap";
+
 import React, { useRef, useEffect } from "react";
 import Image from "next/image";
-import gsap from "gsap";
-import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { aboutData } from "@/data/about";
-
-if (typeof window !== "undefined") {
-  gsap.registerPlugin(ScrollTrigger);
-}
 
 export function Craftsmanship() {
   const sectionRef = useRef(null);
@@ -16,6 +12,7 @@ export function Craftsmanship() {
   const trackRef = useRef(null);
 
   useEffect(() => {
+    registerGSAP();
     // Only apply horizontal scroll on desktop
     const matchMedia = gsap.matchMedia();
 

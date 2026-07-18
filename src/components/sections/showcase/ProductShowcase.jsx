@@ -1,17 +1,13 @@
 "use client";
 
+import { gsap, ScrollTrigger, registerGSAP } from "@/lib/gsap";
+
 import React, { useState, useEffect, useRef } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { Check, ArrowRight } from "lucide-react";
-import gsap from "gsap";
-import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { showcaseProducts } from "@/data/showcase";
 import { cn } from "@/lib/utils";
-
-if (typeof window !== "undefined") {
-  gsap.registerPlugin(ScrollTrigger);
-}
 
 export function ProductShowcase() {
   const [activeIndex, setActiveIndex] = useState(0);
@@ -25,6 +21,7 @@ export function ProductShowcase() {
 
   // Initial Scroll Reveal
   useEffect(() => {
+    registerGSAP();
     let ctx = gsap.context(() => {
       gsap.from(headerRef.current.children, {
         y: 40,
@@ -156,9 +153,8 @@ export function ProductShowcase() {
                       isActive ? "max-h-[2500px] opacity-100 pb-8" : "max-h-0 opacity-0"
                     )}
                   >
-                    {isActive && (
-                      <div className="px-6 sm:px-8 pt-4">
-                        <div className="relative w-full aspect-[4/3] sm:aspect-[16/9] rounded-[24px] sm:rounded-[32px] overflow-hidden shadow-[0_20px_40px_rgba(31,31,31,0.08)] mb-8">
+                    <div className="px-6 sm:px-8 pt-4">
+                      <div className="relative w-full aspect-[4/3] sm:aspect-[16/9] rounded-[24px] sm:rounded-[32px] overflow-hidden shadow-[0_20px_40px_rgba(31,31,31,0.08)] mb-8">
                           <Image
                             src={product.image}
                             alt={product.name}
@@ -169,8 +165,7 @@ export function ProductShowcase() {
                           />
                         </div>
                         <ProductDetails product={product} />
-                      </div>
-                    )}
+                    </div>
                   </div>
                 </div>
               );

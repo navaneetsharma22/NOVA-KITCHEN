@@ -172,7 +172,7 @@ export function Navbar() {
                 >
                   <span className={cn(
                     "transition-all duration-300",
-                    isActive ? "text-primary translate-x-4" : "group-hover:translate-x-4"
+                    isActive ? "text-primary" : "group-hover:translate-x-4"
                   )}>
                     {link.name}
                   </span>

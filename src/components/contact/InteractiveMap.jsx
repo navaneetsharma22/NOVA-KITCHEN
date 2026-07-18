@@ -1,20 +1,16 @@
 "use client";
 
+import { gsap, ScrollTrigger, registerGSAP } from "@/lib/gsap";
+
 import React, { useRef, useEffect } from "react";
 import Image from "next/image";
-import gsap from "gsap";
-import { ScrollTrigger } from "gsap/ScrollTrigger";
-
-if (typeof window !== "undefined") {
-  gsap.registerPlugin(ScrollTrigger);
-}
-
 export function InteractiveMap() {
   const mapRef = useRef(null);
   const pinRef = useRef(null);
   const pulseRef = useRef(null);
 
   useEffect(() => {
+    registerGSAP();
     let ctx = gsap.context(() => {
       // Reveal the map block
       gsap.from(mapRef.current, {

@@ -1,15 +1,13 @@
 "use client";
 
+import { gsap, ScrollTrigger, registerGSAP } from "@/lib/gsap";
+
 import React, { useRef, useEffect } from "react";
-import gsap from "gsap";
-import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { collections } from "@/data/collections";
 import { CollectionCard } from "@/components/cards/CollectionCard";
 
 // Register ScrollTrigger for scroll-based animations
-if (typeof window !== "undefined") {
-  gsap.registerPlugin(ScrollTrigger);
-}
+
 
 export function CollectionsSection() {
   const sectionRef = useRef(null);
@@ -17,6 +15,7 @@ export function CollectionsSection() {
   const cardsContainerRef = useRef(null);
 
   useEffect(() => {
+    registerGSAP();
     // Clean up function context
     let ctx = gsap.context(() => {
       // 1. Header Reveal Animation

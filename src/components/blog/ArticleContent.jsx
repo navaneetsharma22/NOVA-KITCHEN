@@ -1,19 +1,15 @@
 "use client";
 
+import { gsap, ScrollTrigger, registerGSAP } from "@/lib/gsap";
+
 import React, { useRef, useEffect } from "react";
 import Image from "next/image";
 import { Quote } from "lucide-react";
-import gsap from "gsap";
-import { ScrollTrigger } from "gsap/ScrollTrigger";
-
-if (typeof window !== "undefined") {
-  gsap.registerPlugin(ScrollTrigger);
-}
-
 export function ArticleContent({ content }) {
   const contentRef = useRef(null);
 
   useEffect(() => {
+    registerGSAP();
     let ctx = gsap.context(() => {
       // Gentle fade in for content blocks as they scroll into view
       gsap.utils.toArray('.article-block').forEach((block) => {

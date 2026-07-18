@@ -1,21 +1,17 @@
 "use client";
 
+import { gsap, ScrollTrigger, registerGSAP } from "@/lib/gsap";
+
 import React, { useRef, useEffect } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { ArrowLeft } from "lucide-react";
-import gsap from "gsap";
-import { ScrollTrigger } from "gsap/ScrollTrigger";
-
-if (typeof window !== "undefined") {
-  gsap.registerPlugin(ScrollTrigger);
-}
-
 export function CollectionHero({ collection }) {
   const heroRef = useRef(null);
   const textRef = useRef(null);
 
   useEffect(() => {
+    registerGSAP();
     let ctx = gsap.context(() => {
       // Background Parallax
       gsap.to(heroRef.current, {

@@ -1,23 +1,20 @@
 "use client";
 
+import { gsap, ScrollTrigger, registerGSAP } from "@/lib/gsap";
+
 import React, { useRef, useEffect } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { ArrowRight } from "lucide-react";
-import gsap from "gsap";
-import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { collectionsDetailed } from "@/data/collectionsDetailed";
 import { cn } from "@/lib/utils";
-
-if (typeof window !== "undefined") {
-  gsap.registerPlugin(ScrollTrigger);
-}
 
 export default function CollectionsPage() {
   const heroRef = useRef(null);
   const gridRef = useRef(null);
 
   useEffect(() => {
+    registerGSAP();
     let ctx = gsap.context(() => {
       gsap.from(heroRef.current.children, {
         y: 40, opacity: 0, duration: 1, stagger: 0.15, ease: "power3.out"

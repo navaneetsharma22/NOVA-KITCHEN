@@ -1,19 +1,15 @@
 "use client";
 
+import { gsap, ScrollTrigger, registerGSAP } from "@/lib/gsap";
+
 import React, { useRef, useEffect } from "react";
-import gsap from "gsap";
-import { ScrollTrigger } from "gsap/ScrollTrigger";
-
-if (typeof window !== "undefined") {
-  gsap.registerPlugin(ScrollTrigger);
-}
-
 export function CollectionSpecs({ collection }) {
   const sectionRef = useRef(null);
   const leftRef = useRef(null);
   const rightRef = useRef(null);
 
   useEffect(() => {
+    registerGSAP();
     let ctx = gsap.context(() => {
       gsap.from([leftRef.current, rightRef.current], {
         y: 60,

@@ -1,20 +1,16 @@
 "use client";
 
+import { gsap, ScrollTrigger, registerGSAP } from "@/lib/gsap";
+
 import React, { useRef, useEffect } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { ArrowRight } from "lucide-react";
-import gsap from "gsap";
-import { ScrollTrigger } from "gsap/ScrollTrigger";
-
-if (typeof window !== "undefined") {
-  gsap.registerPlugin(ScrollTrigger);
-}
-
 export function BlogList({ articles }) {
   const listRef = useRef(null);
 
   useEffect(() => {
+    registerGSAP();
     if (!articles || articles.length === 0) return;
 
     let ctx = gsap.context(() => {

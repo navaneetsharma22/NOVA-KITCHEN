@@ -1,14 +1,10 @@
 "use client";
 
+import { gsap, ScrollTrigger, registerGSAP } from "@/lib/gsap";
+
 import React, { useRef, useEffect } from "react";
-import gsap from "gsap";
-import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { aboutData } from "@/data/about";
 import { cn } from "@/lib/utils";
-
-if (typeof window !== "undefined") {
-  gsap.registerPlugin(ScrollTrigger);
-}
 
 export function Awards() {
   const sectionRef = useRef(null);
@@ -16,6 +12,7 @@ export function Awards() {
   const listRef = useRef(null);
 
   useEffect(() => {
+    registerGSAP();
     let ctx = gsap.context(() => {
       // Header Reveal
       gsap.from(headerRef.current.children, {

@@ -1,14 +1,10 @@
 "use client";
 
+import { gsap, ScrollTrigger, registerGSAP } from "@/lib/gsap";
+
 import React, { useRef, useEffect } from "react";
-import gsap from "gsap";
-import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { projects } from "@/data/projects";
 import { CoverflowCarousel } from "./CoverflowCarousel";
-
-if (typeof window !== "undefined") {
-  gsap.registerPlugin(ScrollTrigger);
-}
 
 export function ProjectsSection() {
   const sectionRef = useRef(null);
@@ -16,6 +12,7 @@ export function ProjectsSection() {
   const carouselRef = useRef(null);
 
   useEffect(() => {
+    registerGSAP();
     let ctx = gsap.context(() => {
       // Header Reveal
       gsap.from(headerRef.current.children, {

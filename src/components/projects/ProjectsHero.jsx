@@ -1,18 +1,14 @@
 "use client";
 
+import { gsap, ScrollTrigger, registerGSAP } from "@/lib/gsap";
+
 import React, { useRef, useEffect } from "react";
-import gsap from "gsap";
-import { ScrollTrigger } from "gsap/ScrollTrigger";
-
-if (typeof window !== "undefined") {
-  gsap.registerPlugin(ScrollTrigger);
-}
-
 export function ProjectsHero() {
   const sectionRef = useRef(null);
   const textRef = useRef(null);
 
   useEffect(() => {
+    registerGSAP();
     let ctx = gsap.context(() => {
       gsap.from(textRef.current.children, {
         y: 40, opacity: 0, duration: 1.2, stagger: 0.15, ease: "power3.out",

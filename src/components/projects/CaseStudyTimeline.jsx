@@ -1,19 +1,16 @@
 "use client";
 
-import React, { useRef, useEffect } from "react";
-import gsap from "gsap";
-import { ScrollTrigger } from "gsap/ScrollTrigger";
-import { Check } from "lucide-react";
+import { gsap, ScrollTrigger, registerGSAP } from "@/lib/gsap";
 
-if (typeof window !== "undefined") {
-  gsap.registerPlugin(ScrollTrigger);
-}
+import React, { useRef, useEffect } from "react";
+import { Check } from "lucide-react";
 
 export function CaseStudyTimeline({ project }) {
   const sectionRef = useRef(null);
   const timelineRef = useRef(null);
 
   useEffect(() => {
+    registerGSAP();
     let ctx = gsap.context(() => {
       gsap.from(timelineRef.current.children, {
         x: -40, opacity: 0, duration: 1, stagger: 0.15, ease: "power3.out",

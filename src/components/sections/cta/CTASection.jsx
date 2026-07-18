@@ -1,15 +1,10 @@
 "use client";
 
+import { gsap, ScrollTrigger, registerGSAP } from "@/lib/gsap";
+
 import React, { useRef, useEffect } from "react";
 import Link from "next/link";
 import { ArrowRight, Check, Phone, Mail, Clock } from "lucide-react";
-import gsap from "gsap";
-import { ScrollTrigger } from "gsap/ScrollTrigger";
-
-if (typeof window !== "undefined") {
-  gsap.registerPlugin(ScrollTrigger);
-}
-
 const trustPills = [
   "Free Design Consultation",
   "Custom 3D Visualization",
@@ -25,6 +20,7 @@ export function CTASection() {
   const pillsRef = useRef(null);
 
   useEffect(() => {
+    registerGSAP();
     let ctx = gsap.context(() => {
       // Content Stagger Reveal
       gsap.from(contentRef.current.children, {

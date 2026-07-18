@@ -1,16 +1,12 @@
 "use client";
 
+import { gsap, ScrollTrigger, registerGSAP } from "@/lib/gsap";
+
 import React, { useState, useEffect, useRef } from "react";
 import Image from "next/image";
 import { Star, CheckCircle2 } from "lucide-react";
-import gsap from "gsap";
-import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { materials } from "@/data/materials";
 import { cn } from "@/lib/utils";
-
-if (typeof window !== "undefined") {
-  gsap.registerPlugin(ScrollTrigger);
-}
 
 export function MaterialLibrary() {
   const [activeIndex, setActiveIndex] = useState(0);
@@ -24,6 +20,7 @@ export function MaterialLibrary() {
 
   // Initial Entry Animation
   useEffect(() => {
+    registerGSAP();
     let ctx = gsap.context(() => {
       gsap.from(headerRef.current.children, {
         y: 40,

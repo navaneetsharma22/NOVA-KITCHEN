@@ -1,19 +1,16 @@
 "use client";
 
-import React, { useRef, useEffect } from "react";
-import gsap from "gsap";
-import { ScrollTrigger } from "gsap/ScrollTrigger";
-import { aboutData } from "@/data/about";
+import { gsap, ScrollTrigger, registerGSAP } from "@/lib/gsap";
 
-if (typeof window !== "undefined") {
-  gsap.registerPlugin(ScrollTrigger);
-}
+import React, { useRef, useEffect } from "react";
+import { aboutData } from "@/data/about";
 
 export function Philosophy() {
   const sectionRef = useRef(null);
   const textRef = useRef(null);
 
   useEffect(() => {
+    registerGSAP();
     let ctx = gsap.context(() => {
       // Split text roughly by sentences or words to reveal them
       const words = textRef.current.children;

@@ -1,14 +1,10 @@
 "use client";
 
+import { gsap, ScrollTrigger, registerGSAP } from "@/lib/gsap";
+
 import React, { useRef, useEffect, useState } from "react";
 import Image from "next/image";
-import gsap from "gsap";
-import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { MoveHorizontal } from "lucide-react";
-
-if (typeof window !== "undefined") {
-  gsap.registerPlugin(ScrollTrigger);
-}
 
 export function BeforeAfter({ project }) {
   const sectionRef = useRef(null);
@@ -18,6 +14,7 @@ export function BeforeAfter({ project }) {
   const [isDragging, setIsDragging] = useState(false);
 
   useEffect(() => {
+    registerGSAP();
     let ctx = gsap.context(() => {
       gsap.from(sliderRef.current, {
         y: 40, opacity: 0, duration: 1, ease: "power3.out",

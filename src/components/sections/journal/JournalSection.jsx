@@ -1,17 +1,13 @@
 "use client";
 
+import { gsap, ScrollTrigger, registerGSAP } from "@/lib/gsap";
+
 import React, { useRef, useEffect } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { ArrowRight, Clock } from "lucide-react";
-import gsap from "gsap";
-import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { journalArticles } from "@/data/journal";
 import { cn } from "@/lib/utils";
-
-if (typeof window !== "undefined") {
-  gsap.registerPlugin(ScrollTrigger);
-}
 
 export function JournalSection() {
   const sectionRef = useRef(null);
@@ -23,44 +19,54 @@ export function JournalSection() {
   const sideArticles = journalArticles.slice(1, 5); // Display next 4 articles
 
   useEffect(() => {
+    registerGSAP();
     let ctx = gsap.context(() => {
       // Header Reveal
-      gsap.from(headerRef.current.children, {
-        y: 40,
-        opacity: 0,
-        duration: 1,
-        stagger: 0.15,
-        ease: "power3.out",
-        scrollTrigger: {
-          trigger: headerRef.current,
-          start: "top 85%",
+      gsap.fromTo(headerRef.current.children, 
+        { y: 40, opacity: 0 },
+        {
+          y: 0,
+          opacity: 1,
+          duration: 1,
+          stagger: 0.15,
+          ease: "power3.out",
+          scrollTrigger: {
+            trigger: headerRef.current,
+            start: "top 85%",
+          }
         }
-      });
+      );
       
       // Featured Article Reveal
-      gsap.from(featuredRef.current, {
-        y: 60,
-        opacity: 0,
-        duration: 1.2,
-        ease: "power3.out",
-        scrollTrigger: {
-          trigger: sectionRef.current,
-          start: "top 75%",
+      gsap.fromTo(featuredRef.current, 
+        { y: 60, opacity: 0 },
+        {
+          y: 0,
+          opacity: 1,
+          duration: 1.2,
+          ease: "power3.out",
+          scrollTrigger: {
+            trigger: sectionRef.current,
+            start: "top 75%",
+          }
         }
-      });
+      );
       
       // Side Articles Stagger Reveal
-      gsap.from(sideListRef.current.children, {
-        x: 40,
-        opacity: 0,
-        duration: 0.8,
-        stagger: 0.15,
-        ease: "power3.out",
-        scrollTrigger: {
-          trigger: sectionRef.current,
-          start: "top 75%",
+      gsap.fromTo(sideListRef.current.children, 
+        { x: 40, opacity: 0 },
+        {
+          x: 0,
+          opacity: 1,
+          duration: 0.8,
+          stagger: 0.15,
+          ease: "power3.out",
+          scrollTrigger: {
+            trigger: sideListRef.current,
+            start: "top 85%",
+          }
         }
-      });
+      );
     }, sectionRef);
 
     return () => ctx.revert();

@@ -1,14 +1,10 @@
 "use client";
 
+import { gsap, ScrollTrigger, registerGSAP } from "@/lib/gsap";
+
 import React, { useRef, useEffect } from "react";
 import Image from "next/image";
-import gsap from "gsap";
-import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { aboutData } from "@/data/about";
-
-if (typeof window !== "undefined") {
-  gsap.registerPlugin(ScrollTrigger);
-}
 
 export function AboutHero() {
   const sectionRef = useRef(null);
@@ -17,6 +13,7 @@ export function AboutHero() {
   const bgRef = useRef(null);
 
   useEffect(() => {
+    registerGSAP();
     let ctx = gsap.context(() => {
       // Split heading into words for staggered reveal
       const words = headingRef.current.children;

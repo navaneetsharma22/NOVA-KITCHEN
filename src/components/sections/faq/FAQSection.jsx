@@ -1,17 +1,13 @@
 "use client";
 
+import { gsap, ScrollTrigger, registerGSAP } from "@/lib/gsap";
+
 import React, { useState, useEffect, useRef } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { ChevronDown, Check, Phone } from "lucide-react";
-import gsap from "gsap";
-import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { faqQuestions } from "@/data/faq";
 import { cn } from "@/lib/utils";
-
-if (typeof window !== "undefined") {
-  gsap.registerPlugin(ScrollTrigger);
-}
 
 export function FAQSection() {
   const [openIndex, setOpenIndex] = useState(0); // First question open by default
@@ -22,6 +18,7 @@ export function FAQSection() {
   const rightPanelRef = useRef(null);
 
   useEffect(() => {
+    registerGSAP();
     let ctx = gsap.context(() => {
       // Header Reveal
       gsap.from(headerRef.current.children, {

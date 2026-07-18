@@ -1,16 +1,12 @@
 "use client";
 
+import { gsap, ScrollTrigger, registerGSAP } from "@/lib/gsap";
+
 import React, { useState, useEffect, useRef } from "react";
 import Image from "next/image";
 import { ArrowRight } from "lucide-react";
-import gsap from "gsap";
-import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { novaDifference, novaStats } from "@/data/difference";
 import { cn } from "@/lib/utils";
-
-if (typeof window !== "undefined") {
-  gsap.registerPlugin(ScrollTrigger);
-}
 
 export function DifferenceSection() {
   const [activeIndex, setActiveIndex] = useState(0);
@@ -26,6 +22,7 @@ export function DifferenceSection() {
 
   // Initial Scroll Reveal
   useEffect(() => {
+    registerGSAP();
     let ctx = gsap.context(() => {
       // Header Reveal
       gsap.from(headerRef.current.children, {
