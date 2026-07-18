@@ -5,6 +5,10 @@ import { MaterialLibrary } from "@/components/sections/materials/MaterialLibrary
 import { ProjectsSection } from "@/components/sections/projects/ProjectsSection";
 import { DifferenceSection } from "@/components/sections/difference/DifferenceSection";
 import { ProcessSection } from "@/components/sections/process/ProcessSection";
+import { JournalSection } from "@/components/sections/journal/JournalSection";
+import { TestimonialSection } from "@/components/sections/testimonials/TestimonialSection";
+import { FAQSection } from "@/components/sections/faq/FAQSection";
+import { CTASection } from "@/components/sections/cta/CTASection";
 
 export default function Home() {
   return (
@@ -16,6 +20,10 @@ export default function Home() {
       <ProjectsSection />
       <DifferenceSection />
       <ProcessSection />
+      <JournalSection />
+      <TestimonialSection />
+      <FAQSection />
+      <CTASection />
       {/* Future sections will go here */}
     </div>
   );
